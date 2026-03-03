@@ -1,0 +1,15 @@
+/workspaces/CajeroAutomatico/CajeroAutomatico/bin/Debug/net10.0/CajeroAutomatico
+/workspaces/CajeroAutomatico/CajeroAutomatico/bin/Debug/net10.0/CajeroAutomatico.deps.json
+/workspaces/CajeroAutomatico/CajeroAutomatico/bin/Debug/net10.0/CajeroAutomatico.runtimeconfig.json
+/workspaces/CajeroAutomatico/CajeroAutomatico/bin/Debug/net10.0/CajeroAutomatico.dll
+/workspaces/CajeroAutomatico/CajeroAutomatico/bin/Debug/net10.0/CajeroAutomatico.pdb
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.AssemblyInfoInputs.cache
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.AssemblyInfo.cs
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.csproj.CoreCompileInputs.cache
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.sourcelink.json
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.dll
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/refint/CajeroAutomatico.dll
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.pdb
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/CajeroAutomatico.genruntimeconfig.cache
+/workspaces/CajeroAutomatico/CajeroAutomatico/obj/Debug/net10.0/ref/CajeroAutomatico.dll
