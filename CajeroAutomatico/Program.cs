@@ -48,7 +48,7 @@ class Program
         {
             Console.Write("Ingresa tu número de cuenta: ");
 
-            int numero = Convert.ToInt32(Console.ReadLine());
+            int numero = LeerEntero("Ingrea el numero de cuenta: ");
 
             Cuenta cuenta = cuentas.Find(c => c.Numero == numero);
 
@@ -62,9 +62,8 @@ class Program
 
             while (intentos < 3)
             {
-                Console.Write("Ingresa tu PIN: ");
 
-                int pin = Convert.ToInt32(Console.ReadLine());
+                int pin = LeerEntero("Ingresa tú PIN");
 
                 if (pin == cuenta.Pin)
                 {
@@ -91,9 +90,8 @@ class Program
             Console.WriteLine("1. Consultar saldo");
             Console.WriteLine("2. Retirar dinero");
             Console.WriteLine("3. Salir");
-            Console.Write("Seleccione una opción: ");
 
-            opcion = Convert.ToInt32(Console.ReadLine());
+            opcion = LeerEntero("Selecciona una opción");
 
             switch (opcion)
             {
@@ -124,9 +122,8 @@ class Program
 
     static void RealizarRetiro(Cuenta cuenta)
     {
-        Console.Write("Monto a retirar: ");
 
-        double retiro = Convert.ToDouble(Console.ReadLine());
+        double retiro = LeerDouble("Monto a retirar");
 
         if (retiro <= 0)
         {
@@ -174,5 +171,42 @@ class Program
         Console.WriteLine($"Promedio de retiros: ${promedio}");
         Console.WriteLine($"Mayor retiro: ${mayorRetiro}");
         Console.WriteLine($"Saldo final: ${cuenta.Saldo}");
+    }
+
+    static int LeerEntero(string mensaje)
+    {
+        int valor; 
+
+        while (true)
+        {
+            Console.WriteLine(mensaje); 
+
+            bool esValido = int.TryParse(Console.ReadLine(), out valor); 
+            if (esValido)
+            {
+                return valor; 
+            }
+
+            Console.WriteLine("Entrada Invalida. debes ingresar un numero válido"); 
+        }
+    }
+
+     static double LeerDouble(string mensaje)
+    {
+        double valor; 
+
+        while (true)
+        {
+            Console.WriteLine(mensaje); 
+
+            bool esValido = double.TryParse(Console.ReadLine(), out valor); 
+            
+            if (esValido)
+            {
+                return valor; 
+            }
+
+            Console.WriteLine("Entrada Invalida. debes ingresar un numero válido"); 
+        }
     }
 }
