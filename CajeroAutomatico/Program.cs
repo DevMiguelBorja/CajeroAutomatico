@@ -20,6 +20,7 @@ class Cuenta
 class Program
 {
     static List<Cuenta> cuentas = new List<Cuenta>();
+     const double TASA_ANUAL = 0.12; 
 
     static void Main()
     {
@@ -89,7 +90,8 @@ class Program
             Console.WriteLine("\n----- DEVBANK -----");
             Console.WriteLine("1. Consultar saldo");
             Console.WriteLine("2. Retirar dinero");
-            Console.WriteLine("3. Salir");
+            Console.WriteLine("3. Simular CDT");
+            Console.WriteLine("4. Salir "); 
 
             opcion = LeerEntero("Selecciona una opción");
 
@@ -104,8 +106,12 @@ class Program
                     break;
 
                 case 3:
+                   SimularCDT(); 
+                   break; 
+
+                case 4:
                     Console.WriteLine("Gracias por usar DevBANK.");
-                    break;
+                    break; 
 
                 default:
                     Console.WriteLine("Opción inválida.");
@@ -171,6 +177,41 @@ class Program
         Console.WriteLine($"Promedio de retiros: ${promedio}");
         Console.WriteLine($"Mayor retiro: ${mayorRetiro}");
         Console.WriteLine($"Saldo final: ${cuenta.Saldo}");
+    }
+
+    static void SimularCDT()
+    {
+
+        Console.WriteLine("----- SIMULAR CDT -------");
+
+        double monto = LeerDouble("Ingrese el monto a invertir");  
+
+        if (monto <= 0)
+        {
+            Console.WriteLine("El monto debe ser mayor a cero."); 
+            return; 
+        }
+
+        int meses = LeerEntero("Ingrese el plazo en meses: ");
+
+        if(meses <= 0)
+        {
+            Console.WriteLine("El plazo debe ser mayor a cero"); 
+            return; 
+        } 
+
+        double tasaMensual = TASA_ANUAL/12; 
+
+        double valorFinal = monto * Math.Pow(1 + tasaMensual, meses);
+
+        double intereses = valorFinal - monto; 
+
+        Console.WriteLine("---------- RESULTADO --------"); 
+        Console.WriteLine($"Monto invertido ${monto}");
+        Console.WriteLine($"plazo: {meses} meses"); 
+        Console.WriteLine($"Intereses generados: ${intereses}"); 
+        Console.WriteLine($"Valor Final: ${valorFinal}");  
+
     }
 
     static int LeerEntero(string mensaje)
