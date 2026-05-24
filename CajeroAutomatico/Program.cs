@@ -24,6 +24,7 @@ class Program
 
     static void Main()
     {
+        
         InicializarCuentas();
 
         Console.WriteLine("Bienvenido a DEVBANK!");
@@ -37,12 +38,21 @@ class Program
         }
     }
 
-    static void InicializarCuentas()
+    /// <summary>
+    /// Contiene las cuentas existentes para simular la base de datos.
+    /// </summary>
+       static void InicializarCuentas()
     {
         cuentas.Add(new Cuenta(123456, 1111, 500000));
         cuentas.Add(new Cuenta(654321, 2222, 300000));
     }
 
+
+    /// <summary>
+    /// Procesa la validacion del inicio de sesión del usuario a traves de un ciclo while que busca y Valida 
+    /// el modelo cuenta.
+    /// </summary>
+    /// <returns>El exito de del inicio de sesión para entrar al menu principal.</returns>
     static Cuenta Login()
     {
         while (true)
@@ -81,6 +91,13 @@ class Program
         }
     }
 
+    /// <summary>
+    /// Muestra el menú principal del cajero y
+    /// coordina las operaciones disponibles.
+    /// </summary>
+    /// <param name="cuenta">
+    /// Cuenta autenticada del usuario.
+    /// </param>
     static void MostrarMenu(Cuenta cuenta)
     {
         int opcion;
@@ -121,10 +138,23 @@ class Program
         } while (opcion != 3);
     }
 
+    /// <summary>
+    /// Muestra el saldo actual de la cuenta.
+    /// </summary>
+    /// <param name="cuenta">
+    /// Cuenta de la cual se consultará el saldo.
+    /// </param>
     static void ConsultarSaldo(Cuenta cuenta)
     {
         Console.WriteLine($"Saldo actual: ${cuenta.Saldo}");
     }
+
+    /// <summary>
+    /// Solicita y procesa un retiro de dinero.
+    /// </summary>
+    /// <param name="cuenta">
+    /// Cuenta desde la cual se realizará el retiro.
+    /// </param>
 
     static void RealizarRetiro(Cuenta cuenta)
     {
@@ -149,6 +179,13 @@ class Program
         Console.WriteLine("Retiro exitoso!");
     }
 
+        /// <summary>
+    /// Genera y muestra un reporte de transacciones
+    /// realizadas por la cuenta.
+    /// </summary>
+    /// <param name="cuenta">
+    /// Cuenta de la cual se generará el reporte.
+    /// </param>
     static void GenerarReporte(Cuenta cuenta)
     {
         Console.WriteLine("\n---- REPORTE DE TRANSACCIONES ----");
@@ -169,8 +206,7 @@ class Program
         int cantidadRetiros = cuenta.Retiros.Count;
 
         double promedio = cantidadRetiros > 0
-            ? totalRetirado / cantidadRetiros
-            : 0;
+            ? totalRetirado / cantidadRetiros: 0;
 
         Console.WriteLine($"Cantidad de retiros: {cantidadRetiros}");
         Console.WriteLine($"Total retirado: ${totalRetirado}");
@@ -179,6 +215,10 @@ class Program
         Console.WriteLine($"Saldo final: ${cuenta.Saldo}");
     }
 
+    /// <summary>
+    /// Ejecuta la simulación de un CDT solicitando
+    /// monto y plazo al usuario.
+    /// </summary>
     static void SimularCDT()
     {
 
@@ -214,6 +254,16 @@ class Program
 
     }
 
+    /// <summary>
+    /// Lee y valida una entrada numérica entera
+    /// desde consola.
+    /// </summary>
+    /// <param name="mensaje">
+    /// Mensaje mostrado al usuario.
+    /// </param>
+    /// <returns>
+    /// Número entero válido ingresado por el usuario.
+    /// </returns>
     static int LeerEntero(string mensaje)
     {
         int valor; 
@@ -231,7 +281,16 @@ class Program
             Console.WriteLine("Entrada Invalida. debes ingresar un numero válido"); 
         }
     }
-
+    /// <summary>
+    /// Lee y valida una entrada numérica decimal
+    /// desde consola.
+    /// </summary>
+    /// <param name="mensaje">
+    /// Mensaje mostrado al usuario.
+    /// </param>
+    /// <returns>
+    /// Número decimal válido ingresado por el usuario.
+    /// </returns>
      static double LeerDouble(string mensaje)
     {
         double valor; 
